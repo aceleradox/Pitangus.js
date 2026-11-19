@@ -14,7 +14,7 @@ Funciona **sem imagens** (sprites programáticos) e carrega via CDN.
   <div id="game-container"></div>
 
   <!-- CDN oficial -->
-   <script src="https://cdn.jsdelivr.net/gh/aceleradox/Pitangus.js@v1.1.0/pitangus.js"></script>
+   <script src="https://cdn.jsdelivr.net/gh/aceleradox/Pitangus.js@v2.0.0/pitangus.js"></script>
 
   <script>
     function gamemode(PT, PIXI) {
