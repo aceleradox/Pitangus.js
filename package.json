@@ -1,0 +1,40 @@
+{
+  "name": "pitangus-js",
+  "version": "1.1.0",
+  "description": "🦜 Engine 2D leve sobre PixiJS v8. Um script, uma função, um jogo.",
+  "main": "pitangus.js",
+  "files": [
+    "pitangus.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "npx http-server . -p 8080 -c-1"
+  },
+  "keywords": [
+    "game-engine",
+    "2d",
+    "pixijs",
+    "canvas",
+    "webgl",
+    "html5",
+    "pitangus"
+  ],
+  "author": "Aceleradox",
+  "license": "MIT",
+  "peerDependencies": {
+    "pixi.js": "^8.6.6"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "pixi.js": "^8.6.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aceleradox/Pitangus.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aceleradox/Pitangus.js/issues"
+  },
+  "homepage": "https://github.com/aceleradox/Pitangus.js#readme"
+}
