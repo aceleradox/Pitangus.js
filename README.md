@@ -14,7 +14,7 @@ Funciona **sem imagens** (sprites programáticos) e carrega via CDN.
   <div id="game-container"></div>
 
   <!-- CDN oficial -->
-  <script src="https://cdn.jsdelivr.net/gh/aceleradox/Pitangus.js@v1.1.0/pitangus.js"></script>
+   <script src="https://cdn.jsdelivr.net/gh/aceleradox/Pitangus.js@v1.1.0/pitangus.js"></script>
 
   <script>
     function gamemode(PT, PIXI) {
@@ -65,30 +65,3 @@ Regras do gamemode
 
 Licença
 MIT © Aceleradox
-
-text
-
----
-
-### 🚀 3. O Último Passo: Como ativar a CDN
-
-Se você tentar acessar o link da CDN agora (`.../aceleradox/Pitangus.js@v1.1.0/pitangus.js`), vai dar erro 404, porque o jsDelivr precisa de uma **Tag de Versão**. 
-
-No seu terminal (na pasta do projeto), faça o seguinte:
-
-1. **Adicione e comite os arquivos:**
-   ```bash
-   git add .
-   git commit -m "feat: lançamento v1.1.0"
-Crie a Tag de versão:
-
-bash
-git tag v1.1.0
-Envie tudo pro GitHub:
-
-bash
-git push origin main
-git push origin v1.1.0
-Pronto! Agora o jsDelivr vai notar a tag v1.1.0 e o seu link https://cdn.jsdelivr.net/gh/aceleradox/Pitangus.js@v1.1.0/pitangus.js vai funcionar na hora.
-
-(Se você quiser testar sem a tag, pode usar @main no link: https://cdn.jsdelivr.net/gh/aceleradox/Pitangus.js@main/pitangus.js, mas o recomendado é usar a tag fixa).
