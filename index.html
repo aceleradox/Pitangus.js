@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Meu Jogo Pitangus</title>
+  <style>
+    html,body{margin:0;height:100%;background:#020617;overflow:hidden}
+    #game-container{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+  </style>
+</head>
+<body>
+  <div id="game-container"></div>
+
+  <!-- 1) Engine + PixiJS + loading, tudo do CDN -->
+  <script src="./pitangus.js"></script>
+
+  <!-- 2) O jogo inteiro cabe em gamemode(PT, PIXI) -->
+  <script>
+    function gamemode(PT, PIXI) {
+      const { Scene, Sprites, Input } = PT;
+
+      // ---------- CENA DO MENU ----------
+      class MenuScene extends Scene {
+        create() {
+          const W = this.engine.app.screen.width;
+          const H = this.engine.app.screen.height;
+
+          this.container.addChild(Sprites.rect(W, H, 0x0a0f1e));
+
+          const title = Sprites.text('🦜 Meu Jogo', {
+            fontSize: 64, fill: 0xfbbf24, bold: true
+          });
+          title.anchor.set(0.5);
+          title.x = W / 2; title.y = H / 2 - 40;
+          this.container.addChild(title);
+
+          const hint = Sprites.text('Pressione ESPAÇO para jogar', {
+            fontSize: 20, fill: 0x64748b
+          });
+          hint.anchor.set(0.5);
+          hint.x = W / 2; hint.y = H / 2 + 60;
+          this.container.addChild(hint);
+        }
+        update() {
+          if (Input.pressed('Space') || Input.pressed('Enter'))
+            this.engine.start('Game');
+        }
+      }
+
+      // ---------- CENA DO JOGO ----------
+      class GameScene extends Scene {
+        create() {
+          const W = this.engine.app.screen.width;
+          const H = this.engine.app.screen.height;
+          this.container.addChild(Sprites.rect(W, H, 0x0a1628));
+
+          // "player" via sprite programático
+          this.player = Sprites.player(0x06b6d4);
+          this.player.x = W / 2;
+          this.player.y = H / 2;
+          this.container.addChild(this.player);
+
+          this.vx = 0;
+          this.vy = 0;
+        }
+        update(dt) {
+          const ax = Input.axis();
+          this.vx = ax.x * 300;
+          this.vy = ax.y * 300;
+          this.player.x += this.vx * dt;
+          this.player.y += this.vy * dt;
+
+          // trocar de cena
+          if (Input.pressed('Escape')) this.engine.start('Menu');
+        }
+      }
+
+      // registra e inicia
+      PT.register('Menu', MenuScene);
+      PT.register('Game', GameScene);
+      PT.start('Menu');
+    }
+  </script>
+</body>
+</html>
