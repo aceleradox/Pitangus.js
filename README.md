@@ -4,7 +4,7 @@ markdown
 Engine 2D leve sobre **PixiJS v8**. Um `<script>`, uma `function`, um jogo.
 Funciona **sem imagens** (sprites programáticos) e carrega via CDN.
 
-## Uso
+# Uso
 
 ```html
 <!DOCTYPE html>
@@ -44,6 +44,8 @@ Funciona **sem imagens** (sprites programáticos) e carrega via CDN.
   </script>
 </body>
 </html>
+```
+
 API rápida
 Módulo	Principais
 PT.Scene	create() · update(dt) · destroy()
